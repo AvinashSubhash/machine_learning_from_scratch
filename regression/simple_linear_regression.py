@@ -40,7 +40,7 @@ print("resulted equation is y=",beta_i,"x + ",beta_o,"\n")
 for i in range(size):
     se_line+=(data[i][1]-((beta_i*data[i][0])+beta_o))*(data[i][1]-((beta_i*data[i][0])+beta_o))
     se_mean+=(data[i][1]-mean[1])*(data[i][1]-mean[1])
-    
+     
 accuracy=1-(se_line/se_mean)    
 
 print("The accuracy of the algorithm in this case is: ",accuracy*100,"%")
