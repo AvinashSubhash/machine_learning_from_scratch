@@ -14,11 +14,12 @@ xcord=0
 ycord=0
 cords=np.zeros(2)
 no_of_variables=0
-beta_i=[]
 beta_o=[]
 beta_x=[]
 no_of_variables=int(input("Enter the number of variables:"))
 size=int(input("Enter the number of training data:"))
+
+beta_i=np.zeros(no_of_variables)
 data=np.zeros((size,no_of_variables+1))
 mean=[]
 for i in range(size):
@@ -30,15 +31,17 @@ for i in range(size):
         
 mean=(data.sum(axis=0))/size
 
-beta_upper=[]
-beta_lower=[]
+beta_upper=np.zeros(no_of_variables)
+beta_lower=np.zeros(no_of_variables)
 
 for i in range(no_of_variables):
     for j in range(size):
+        print("i=",i," j=",j,"\n")
         beta_upper[i]+=(data[j][i]-mean[i])*(data[j][no_of_variables]-mean[no_of_variables])
         beta_lower[i]+=(data[j][i]-mean[i])*(data[j][i]-mean[i])
      
 for i in range(no_of_variables):
+    print("ii= ",i,"\n")
     beta_i[i]=(beta_upper[i]/beta_lower[i])
     
 beta_x=np.multiply(beta_i,mean[:no_of_variables-1])
