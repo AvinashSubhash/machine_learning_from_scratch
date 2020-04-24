@@ -4,6 +4,13 @@ Created on Sat Apr  4 20:52:36 2020
 
 @author: Aiva
 """
+
+"""Multiple linear regression program with the concept of matrix multiplication and inverse calculation
+
+   This program displays the resultant equation of the data sets given 
+   and shows the predicted output from taking sample input"""
+
+
 import numpy as np
 sets=[]
 output=[]
@@ -44,6 +51,7 @@ for i in range(len(xcord)):
     xcord[i]=int(xcord[i])
     
 prediction=np.dot(xcord,coeffecients)
-prediction=round(prediction,5)
+for i in range(len(prediction)):
+    prediction[i]=round(prediction[i],5)
 
 print("The predicted output is: ",prediction)
