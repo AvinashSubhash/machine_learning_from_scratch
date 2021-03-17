@@ -18,4 +18,4 @@ def data_creator(size,noise=5):
 
 
 def analyser(data):
-    pass
+    
