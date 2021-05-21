@@ -36,7 +36,7 @@ for i in result:
     i[1] = (weight*i[0])+bias
     #print(i[1])
 #print(result)
-#result = modifier(result)
+result = modifier(result)
 print("weight: ",weight,"\n","Bias: ",bias)
 
 error = 0
